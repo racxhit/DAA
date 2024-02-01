@@ -5,7 +5,9 @@ of comparisons for each input case. (Time Complexity = O(nlogn), where n is the 
 */
 
 #include<iostream>
+
 using namespace std;
+
 bool binarySearch(int arr[], int low, int high, int key, int& comparisons) 
 {
     while (low <= high) 
