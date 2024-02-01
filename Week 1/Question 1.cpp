@@ -42,10 +42,12 @@ int main() {
         int comparisons = 0;
         bool found = linearSearch(arr, n, key, comparisons);
 
-        if (found) 
+        if (found)
         {
             cout << "Present" << endl;
-        } else {
+        } 
+        else 
+        {
             cout << "Not Present" << endl;
         }
 
