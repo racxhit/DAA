@@ -4,7 +4,8 @@ program to find whether given key element is present in the array or not. Also, 
 of comparisons for each input case. (Time Complexity = O(n), where n is the size of input)
 */
 
-#include <iostream>
+#include<iostream>
+
 using namespace std;
 
 bool linearSearch(int arr[], int n, int key, int& comparisons) 
@@ -24,7 +25,8 @@ int main() {
     int T; 
     cin >> T;
 
-    while (T--) {
+    while (T--) 
+    {
         int n;
         cin >> n;
 
