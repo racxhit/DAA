@@ -1,3 +1,9 @@
+/*
+Given an already sorted array of positive integers, design an algorithm and implement it using a
+program to find whether given key element is present in the array or not. Also, find total number
+of comparisons for each input case. (Time Complexity = O(nlogn), where n is the size of input).
+*/
+
 #include<iostream>
 using namespace std;
 bool binarySearch(int arr[], int low, int high, int key, int& comparisons) 
