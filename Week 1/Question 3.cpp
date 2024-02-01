@@ -5,7 +5,8 @@ bool linearSearch(int arr[], int start, int end, int key, int& comparisons)
     for (int i = start; i <= end; i++) 
     {
         comparisons++;
-        if (arr[i] == key) {
+        if (arr[i] == key) 
+        {
             return true; 
         }
     }
