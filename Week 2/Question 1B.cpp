@@ -45,9 +45,12 @@ int main()
         cin >> key;
 
         int duplicates = countDuplicates(arr, n, key);
-        if (duplicates > 0) {
+        if (duplicates > 0) 
+        {
             cout << key << " " << duplicates << endl;
-        } else {
+        } 
+        else 
+        {
             cout << "Key not present" << endl;
         }
     }
