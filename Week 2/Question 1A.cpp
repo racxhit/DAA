@@ -4,6 +4,8 @@ and implement it using a program to find whether the given key element is presen
 or not. If present, then also find the number of copies of given key. (Time Complexity = O(log n))
 */
 
+// Using Binary Search
+
 #include <iostream>
 
 using namespace std;
