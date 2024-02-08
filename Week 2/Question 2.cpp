@@ -7,49 +7,49 @@ to find three indices i, j, k such that arr[i] + arr[j] = arr[k].
 
 using namespace std;
 
-bool findSequence(int arr[], int n) 
+bool findSequence(int arr[], int n)
 {
-    for (int k = n - 1; k >= 0; k--) 
+    for (int k = n - 1; k >= 0; k--)
     {
         int i = 0;
         int j = k - 1;
 
-        while (i < j) 
+        while (i < j)
         {
             int sum = arr[i] + arr[j];
 
-            if (sum == arr[k]) 
+            if (sum == arr[k])
             {
-                cout << i << " " << j << " " << k << endl;
+                cout << i+1 << ", " << j+1 << ", " << k+1 << endl;
                 return true;
-            } 
-            else if (sum < arr[k]) 
+            }
+            else if (sum < arr[k])
             {
                 i++;
-            } 
-            else 
+            }
+            else
             {
                 j--;
             }
         }
     }
 
-    cout << "No sequence found" << endl;
+    cout << "No sequence found." << endl;
     return false;
 }
 
-int main() 
+int main()
 {
     int T;
     cin >> T;
 
-    while (T--) 
+    while (T--)
     {
         int n;
         cin >> n;
 
         int arr[n];
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
         {
             cin >> arr[i];
         }
