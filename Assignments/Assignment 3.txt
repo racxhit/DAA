@@ -1,0 +1,61 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int hashFunction(const string& str) {
+const int pb = 191;
+const int mhs = 101;
+int hash = 0;
+for (char c : str) {
+hash = (hash * pb + tolower(c)) % mhs;
+}
+return hash;
+}
+
+int findPatternOccurrences(const string& text, const string& pattern) {
+int patternSize = pattern.size();
+const int mhs = 101;
+vector<pair<string, int>> table(mhs);
+
+int patternHash = hashFunction(pattern);
+
+for (int i = 0; i <= text.size() - patternSize; ++i) {
+string str = text.substr(i, patternSize);
+int hashValue = hashFunction(str);
+int index = hashValue % mhs;
+
+while (table[index].first != "") {
+  if (table[index].first == str) {
+    table[index].second++;
+    break;
+  }
+  index = (index + 1) % mhs;
+}
+
+if (table[index].first == "") {
+  table[index].first = str;
+  table[index].second = 1;
+}
+
+}
+
+if (table[patternHash].first == pattern) {
+return table[patternHash].second;
+}
+return 0;
+}
+
+int main() {
+string text, pattern;
+cout << "Enter the text string: ";
+getline(cin, text);
+cout << "Enter the pattern to search: ";
+getline(cin, pattern);
+
+int count = findPatternOccurrences(text, pattern);
+
+cout << "Count of occurrences of pattern: " << count << endl;
+return 0;
+}
